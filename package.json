@@ -1,70 +1,447 @@
 {
-  "name": "primevue",
-  "version": "3.11.0-SNAPSHOT",
-  "homepage": "https://www.primefaces.org/primevue",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/primefaces/primevue.git"
-  },
-  "license": "MIT",
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build-app": "vue-cli-service build",
-    "build-lib": "NODE_ENV=production rollup -c && node build-meta && node api-generator/build-api && gulp build-styles",
-    "lint": "vue-cli-service lint",
-    "test:unit": "vue-cli-service test:unit"
-  },
-  "keywords": [
-    "primevue",
-    "vue",
-    "vue.js",
-    "vue3",
-    "ui framework",
-    "component framework",
-    "ui library",
-    "component library",
-    "material",
-    "bootstrap",
-    "fluent",
-    "tailwind"
-  ],
-  "devDependencies": {
-    "@babel/cli": "^7.4.4",
-    "@fullcalendar/core": "^5.7.2",
-    "@fullcalendar/daygrid": "^5.7.2",
-    "@fullcalendar/interaction": "^5.7.2",
-    "@fullcalendar/timegrid": "^5.7.2",
-    "@fullcalendar/vue3": "^5.7.2",
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-plugin-router": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
-    "@vue/compiler-sfc": "3.1.5",
-    "@vuelidate/core": "^2.0.0-alpha.14",
-    "@vuelidate/validators": "^2.0.0-alpha.12",
-    "babel-eslint": "^10.1.0",
-    "chart.js": "3.3.2",
-    "codesandbox": "2.1.14",
-    "core-js": "^3.6.5",
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^7.0.0-0",
-    "gulp": "^4.0.2",
-    "gulp-concat": "^2.6.0",
-    "gulp-flatten": "^0.4.0",
-    "gulp-rename": "^2.0.0",
-    "gulp-uglify": "^3.0.2",
-    "gulp-uglifycss": "^1.0.6",
-    "sass": "^1.45.0",
-    "primeflex": "3.1.2",
-    "primeicons": "5.0.0",
-    "prismjs": "^1.15.0",
-    "quill": "^1.3.7",
-    "rollup-plugin-postcss": "^4.0.0",
-    "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-vue": "^6.0.0-beta.9",
-    "sass-loader": "^8.0.2",
-    "vue": "3.1.5",
-    "vue-router": "^4.0.0-0",
-    "webpack-cli": "^4.3.0"
+    "name": "primevue",
+    "version": "3.11.0-SNAPSHOT",
+    "homepage": "https://www.primefaces.org/primevue",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/primefaces/primevue.git"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/primefaces/primevue/issues"
+    },
+    "keywords": [
+      "primevue",
+      "vue",
+      "ui framework",
+      "component framework",
+      "ui library",
+      "component library",
+      "material",
+      "bootstrap"
+    ],
+    "web-types": "./web-types.json",
+    "vetur": {
+      "tags": "./vetur-tags.json",
+      "attributes": "./vetur-attributes.json"
+    },
+    "peerDependencies": {
+      "vue": "^3.0.0",
+      "primeicons": "^5.0.0"
+    },
+    "exports": {
+      "./accordion": {
+        "require": "./accordion/accordion.cjs.js",
+        "import": "./accordion/accordion.cjs.js"
+      },
+      "./accordiontab": {
+        "require": "./accordiontab/accordiontab.cjs.js",
+        "import": "./accordiontab/accordiontab.cjs.js"
+      },
+      "./autocomplete": {
+        "require": "./autocomplete/autocomplete.cjs.js",
+        "import": "./autocomplete/autocomplete.cjs.js"
+      },
+      "./avatar": {
+        "require": "./avatar/avatar.cjs.js",
+        "import": "./avatar/avatar.cjs.js"
+      },
+      "./avatargroup": {
+        "require": "./avatargroup/avatargroup.cjs.js",
+        "import": "./avatargroup/avatargroup.cjs.js"
+      },
+      "./api": {
+        "require": "./api/api.cjs.js",
+        "import": "./api/api.cjs.js"
+      },
+      "./badge": {
+        "require": "./badge/badge.cjs.js",
+        "import": "./badge/badge.cjs.js"
+      },
+      "./badgedirective": {
+        "require": "./badgedirective/badgedirective.cjs.js",
+        "import": "./badgedirective/badgedirective.cjs.js"
+      },
+      "./blockui": {
+        "require": "./blockui/blockui.cjs.js",
+        "import": "./blockui/blockui.cjs.js"
+      },
+      "./breadcrumb": {
+        "require": "./breadcrumb/breadcrumb.cjs.js",
+        "import": "./breadcrumb/breadcrumb.cjs.js"
+      },
+      "./button": {
+        "require": "./button/button.cjs.js",
+        "import": "./button/button.cjs.js"
+      },
+      "./calendar": {
+        "require": "./calendar/calendar.cjs.js",
+        "import": "./calendar/calendar.cjs.js"
+      },
+      "./card": {
+        "require": "./card/card.cjs.js",
+        "import": "./card/card.cjs.js"
+      },
+      "./carousel": {
+        "require": "./card/carousel.cjs.js",
+        "import": "./card/carousel.cjs.js"
+      },
+      "./cascadeselect": {
+        "require": "./cascadeselect/cascadeselect.cjs.js",
+        "import": "./cascadeselect/cascadeselect.cjs.js"
+      },
+      "./chart": {
+        "require": "./chart/chart.cjs.js",
+        "import": "./chart/chart.cjs.js"
+      },
+      "./checkbox": {
+        "require": "./checkbox/checkbox.cjs.js",
+        "import": "./checkbox/checkbox.cjs.js"
+      },
+      "./chip": {
+        "require": "./chip/chip.cjs.js",
+        "import": "./chip/chip.cjs.js"
+      },
+      "./chips": {
+        "require": "./chip/chips.cjs.js",
+        "import": "./chip/chips.cjs.js"
+      },
+      "./colorpicker": {
+        "require": "./colorpicker/colorpicker.cjs.js",
+        "import": "./colorpicker/colorpicker.cjs.js"
+      },
+      "./columngroup": {
+        "require": "./columngroup/columngroup.cjs.js",
+        "import": "./columngroup/columngroup.cjs.js"
+      },
+      "./confirmationeventbus": {
+        "require": "./confirmationeventbus/confirmationeventbus.cjs.js",
+        "import": "./confirmationeventbus/confirmationeventbus.cjs.js"
+      },
+      "./confirmdialog": {
+        "require": "./confirmdialog/confirmdialog.cjs.js",
+        "import": "./confirmdialog/confirmdialog.cjs.js"
+      },
+      "./confirmpopup": {
+        "require": "./confirmpopup/confirmpopup.cjs.js",
+        "import": "./confirmpopup/confirmpopup.cjs.js"
+      },
+      "./contextmenu": {
+        "require": "./contextmenu/contextmenu.cjs.js",
+        "import": "./contextmenu/contextmenu.cjs.js"
+      },
+      "./dataview": {
+        "require": "./dataview/dataview.cjs.js",
+        "import": "./dataview/dataview.cjs.js"
+      },
+      "./dataviewlayoutoptions": {
+        "require": "./dataviewlayoutoptions/dataviewlayoutoptions.cjs.js",
+        "import": "./dataviewlayoutoptions/dataviewlayoutoptions.cjs.js"
+      },
+      "./deferredcontent": {
+        "require": "./deferredcontent/deferredcontent.cjs.js",
+        "import": "./deferredcontent/deferredcontent.cjs.js"
+      },
+      "./divider": {
+        "require": "./divider/divider.cjs.js",
+        "import": "./divider/divider.cjs.js"
+      },
+      "./dock": {
+        "require": "./dock/dock.cjs.js",
+        "import": "./dock/dock.cjs.js"
+      },
+      "./editor": {
+        "require": "./editor/editor.cjs.js",
+        "import": "./editor/editor.cjs.js"
+      },
+      "./fieldset": {
+        "require": "./fieldset/fieldset.cjs.js",
+        "import": "./fieldset/fieldset.cjs.js"
+      },
+      "./fileupload": {
+        "require": "./fileupload/fileupload.cjs.js",
+        "import": "./fileupload/fileupload.cjs.js"
+      },
+      "./fullcalendar": {
+        "require": "./fullcalendar/fullcalendar.cjs.js",
+        "import": "./fullcalendar/fullcalendar.cjs.js"
+      },
+      "./galleria": {
+        "require": "./galleria/galleria.cjs.js",
+        "import": "./galleria/galleria.cjs.js"
+      },
+      "./image": {
+        "require": "./image/image.cjs.js",
+        "import": "./image/image.cjs.js"
+      },
+      "./inlinemessage": {
+        "require": "./inlinemessage/inlinemessage.cjs.js",
+        "import": "./inlinemessage/inlinemessage.cjs.js"
+      },
+      "./inplace": {
+        "require": "./inplace/inplace.cjs.js",
+        "import": "./inplace/inplace.cjs.js"
+      },
+      "./inputmask": {
+        "require": "./inplace/inputmask.cjs.js",
+        "import": "./inplace/inputmask.cjs.js"
+      },
+      "./inputswitch": {
+        "require": "./inputswitch/inputswitch.cjs.js",
+        "import": "./inputswitch/inputswitch.cjs.js"
+      },
+      "./knob": {
+        "require": "./knob/knob.cjs.js",
+        "import": "./knob/knob.cjs.js"
+      },
+      "./listbox": {
+        "require": "./listbox/listbox.cjs.js",
+        "import": "./listbox/listbox.cjs.js"
+      },
+      "./megamenu": {
+        "require": "./megamenu/megamenu.cjs.js",
+        "import": "./megamenu/megamenu.cjs.js"
+      },
+      "./menu": {
+        "require": "./menu/menu.cjs.js",
+        "import": "./menu/menu.cjs.js"
+      },
+      "./menubar": {
+        "require": "./menubar/menubar.cjs.js",
+        "import": "./menubar/menubar.cjs.js"
+      },
+      "./message": {
+        "require": "./message/message.cjs.js",
+        "import": "./message/message.cjs.js"
+      },
+      "./multiselect": {
+        "require": "./multiselect/multiselect.cjs.js",
+        "import": "./multiselect/multiselect.cjs.js"
+      },
+      "./orderlist": {
+        "require": "./orderlist/orderlist.cjs.js",
+        "import": "./orderlist/orderlist.cjs.js"
+      },
+      "./organizationchart": {
+        "require": "./organizationchart/organizationchart.cjs.js",
+        "import": "./organizationchart/organizationchart.cjs.js"
+      },
+      "./overlaypanel": {
+        "require": "./overlaypanel/overlaypanel.cjs.js",
+        "import": "./overlaypanel/overlaypanel.cjs.js"
+      },
+      "./panel": {
+        "require": "./panel/panel.cjs.js",
+        "import": "./panel/panel.cjs.js"
+      },
+      "./panelmenu": {
+        "require": "./panelmenu/panelmenu.cjs.js",
+        "import": "./panelmenu/panelmenu.cjs.js"
+      },
+      "./password": {
+        "require": "./password/password.cjs.js",
+        "import": "./password/password.cjs.js"
+      },
+      "./progressbar": {
+        "require": "./progressbar/progressbar.cjs.js",
+        "import": "./progressbar/progressbar.cjs.js"
+      },
+      "./progressspinner": {
+        "require": "./progressspinner/progressspinner.cjs.js",
+        "import": "./progressspinner/progressspinner.cjs.js"
+      },
+      "./radiobutton": {
+        "require": "./radiobutton/radiobutton.cjs.js",
+        "import": "./radiobutton/radiobutton.cjs.js"
+      },
+      "./rating": {
+        "require": "./rating/rating.cjs.js",
+        "import": "./rating/rating.cjs.js"
+      },
+      "./row": {
+        "require": "./row/row.cjs.js",
+        "import": "./row/row.cjs.js"
+      },
+      "./scrollpanel": {
+        "require": "./scrollpanel/scrollpanel.cjs.js",
+        "import": "./scrollpanel/scrollpanel.cjs.js"
+      },
+      "./scrolltop": {
+        "require": "./scrolltop/scrolltop.cjs.js",
+        "import": "./scrolltop/scrolltop.cjs.js"
+      },
+      "./selectbutton": {
+        "require": "./selectbutton/selectbutton.cjs.js",
+        "import": "./selectbutton/selectbutton.cjs.js"
+      },
+      "./sidebar": {
+        "require": "./sidebar/sidebar.cjs.js",
+        "import": "./sidebar/sidebar.cjs.js"
+      },
+      "./skeleton": {
+        "require": "./skeleton/skeleton.cjs.js",
+        "import": "./skeleton/skeleton.cjs.js"
+      },
+      "./slider": {
+        "require": "./slider/slider.cjs.js",
+        "import": "./slider/slider.cjs.js"
+      },
+      "./speeddial": {
+        "require": "./speeddial/speeddial.cjs.js",
+        "import": "./speeddial/speeddial.cjs.js"
+      },
+      "./splitbutton": {
+        "require": "./splitbutton/splitbutton.cjs.js",
+        "import": "./splitbutton/splitbutton.cjs.js"
+      },
+      "./splitter": {
+        "require": "./splitter/splitter.cjs.js",
+        "import": "./splitter/splitter.cjs.js"
+      },
+      "./splitterpanel": {
+        "require": "./splitterpanel/splitterpanel.cjs.js",
+        "import": "./splitterpanel/splitterpanel.cjs.js"
+      },
+      "./steps": {
+        "require": "./steps/steps.cjs.js",
+        "import": "./steps/steps.cjs.js"
+      },
+      "./styleclass": {
+        "require": "./styleclass/styleclass.cjs.js",
+        "import": "./styleclass/styleclass.cjs.js"
+      },
+      "./tabmenu": {
+        "require": "./tabmenu/tabmenu.cjs.js",
+        "import": "./tabmenu/tabmenu.cjs.js"
+      },
+      "./tabpanel": {
+        "require": "./tabpanel/tabpanel.cjs.js",
+        "import": "./tabpanel/tabpanel.cjs.js"
+      },
+      "./tabview": {
+        "require": "./tabview/tabview.cjs.js",
+        "import": "./tabview/tabview.cjs.js"
+      },
+      "./tag": {
+        "require": "./tag/tag.cjs.js",
+        "import": "./tag/tag.cjs.js"
+      },
+      "./terminal": {
+        "require": "./terminal/terminal.cjs.js",
+        "import": "./terminal/terminal.cjs.js"
+      },
+      "./terminalservice": {
+        "require": "./terminalservice/terminalservice.cjs.js",
+        "import": "./terminalservice/terminalservice.cjs.js"
+      },
+      "./textarea": {
+        "require": "./textarea/textarea.cjs.js",
+        "import": "./textarea/textarea.cjs.js"
+      },
+      "./tiredmenu": {
+        "require": "./tiredmenu/tiredmenu.cjs.js",
+        "import": "./tiredmenu/tiredmenu.cjs.js"
+      },
+      "./timeline": {
+        "require": "./timeline/timeline.cjs.js",
+        "import": "./timeline/timeline.cjs.js"
+      },
+      "./toolbar": {
+        "require": "./toolbar/toolbar.cjs.js",
+        "import": "./toolbar/toolbar.cjs.js"
+      },
+      "./tooltip": {
+        "require": "./tooltip/tooltip.cjs.js",
+        "import": "./tooltip/tooltip.cjs.js"
+      },
+      "./tree": {
+        "require": "./tree/tree.cjs.js",
+        "import": "./tree/tree.cjs.js"
+      },
+      "./treeselect": {
+        "require": "./treeselect/treeselect.cjs.js",
+        "import": "./treeselect/treeselect.cjs.js"
+      },
+      "./treetable": {
+        "require": "./treetable/treetable.cjs.js",
+        "import": "./treetable/treetable.cjs.js"
+      },
+      "./tristatecheckbox": {
+        "require": "./tristatecheckbox/tristatecheckbox.cjs.js",
+        "import": "./tristatecheckbox/tristatecheckbox.cjs.js"
+      },
+      "./useconfirm": {
+        "require": "./useconfirm/useconfirm.cjs.js",
+        "import": "./useconfirm/useconfirm.cjs.js"
+      },
+  
+      "./utils": {
+        "require": "./utils/utils.cjs.js",
+        "import": "./utils/utils.cjs.js"
+      },
+      "./inputtext": {
+        "require": "./inputtext/inputtext.cjs.js",
+        "import": "./inputtext/inputtext.cjs.js"
+      },
+      "./column": {
+        "require": "./column/column.cjs.js",
+        "import": "./column/column.cjs.js"
+      },
+      "./datatable": {
+        "require": "./datatable/datatable.cjs.js",
+        "import": "./datatable/datatable.cjs.js"
+      },
+      "./dialog": {
+        "require": "./dialog/dialog.cjs.js",
+        "import": "./dialog/dialog.cjs.js"
+      },
+      "./toast": {
+        "require": "./toast/toast.cjs.js",
+        "import": "./toast/toast.cjs.js"
+      },
+      "./toastservice": {
+        "require": "./toastservice/toastservice.cjs.js",
+        "import": "./toastservice/toastservice.cjs.js"
+      },
+      "./config": {
+        "require": "./config/config.cjs.js",
+        "import": "./config/config.cjs.js"
+      },
+      "./resources/": {
+        "require": "./resources/",
+        "import": "./resources/"
+      },
+      "./usetoast": {
+        "require": "./usetoast/usetoast.cjs.js",
+        "import": "./usetoast/usetoast.cjs.js"
+      },
+      "./ripple": {
+        "require": "./ripple/ripple.cjs.js",
+        "import": "./ripple/ripple.cjs.js"
+      },
+      "./paginator": {
+        "require": "./paginator/paginator.cjs.js",
+        "import": "./paginator/paginator.cjs.js"
+      },
+      "./dropdown": {
+        "require": "./dropdown/dropdown.cjs.js",
+        "import": "./dropdown/dropdown.cjs.js"
+      },
+      "./virtualscroller": {
+        "require": "./virtualscroller/virtualscroller.cjs.js",
+        "import": "./virtualscroller/virtualscroller.cjs.js"
+      },
+      "./overlayeventbus": {
+        "require": "./overlayeventbus/overlayeventbus.cjs.js",
+        "import": "./overlayeventbus/overlayeventbus.cjs.js"
+      },
+      "./inputnumber": {
+        "require": "./inputnumber/inputnumber.cjs.js",
+        "import": "./inputnumber/inputnumber.cjs.js"
+      },
+      "./toasteventbus": {
+        "require": "./toasteventbus/toasteventbus.cjs.js",
+        "import": "./toasteventbus/toasteventbus.cjs.js"
+      }
+    }
   }
-}
